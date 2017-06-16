@@ -13,6 +13,10 @@ class PrjController extends Controller
         return $this->render('index');
     }
 
+    private function checkUser(){
+        if(Yii::$app->user->isGuest)
+        {   $this->goHome();}    }
+
     public function actionSignup(){
         if(!Yii::$app->user->isGuest)
         {   $this->goHome();}
@@ -52,5 +56,15 @@ class PrjController extends Controller
         if(!Yii::$app->user->isGuest)
             Yii::$app->user->logout();
         $this->goHome();
+    }
+
+    public function actionNomenclature(){
+        $this->checkUser();
+        return $this->render('references/nomenclature');
+    }
+
+    public function actionGoodsin(){
+        $this->checkUser();
+        return $this->render('docs/goodsin');
     }
 }

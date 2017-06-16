@@ -35,11 +35,25 @@ AppAsset::register($this);
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
+    if(!Yii::$app->user->isGuest){
+        echo Nav::widget([
+            'options' => ['class' => 'navbar-nav navbar-left'],
+            'items'=>[
+                ['label' => Yii::t('app','Справочники'), 'items'=>[
+                    ['label'=>Yii::t('app','Номенклатура'),'url'=>['/prj/nomenclature']],
+                ]
+                ],
+                ['label' => Yii::t('app','Документы'), 'items'=>[
+                    ['label'=>Yii::t('app','Поступление товаров'),'url'=>['/prj/goodsin']],
+                ]
+                ],
+            ]
+        ]);
+    }
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => Yii::t('app','Домой'), 'url' => ['/prj/index']],
-            ['label' => 'Описание', 'url' => ['/prj/about']],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Гость', 'items'=>[
                     ['label'=>Yii::t('app','Вход'), 'url' => ['/prj/login']],
