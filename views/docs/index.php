@@ -2,7 +2,10 @@
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
 use Yii;
-$this->title = Yii::t('app','Документы');
-$this->params['breadcrumbs'][] = $this->title;
+
+$title = Yii::t('app','Документы');
+if(!$this->title)
+    $this->title = Yii::$app->name. ': ' . $title;
+$this->params['breadcrumbs'][] = $title;
 ?>
-<h1><?=$this->title?></h1>
+<h2><?=$title?></h2>

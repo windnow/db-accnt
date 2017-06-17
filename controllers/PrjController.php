@@ -9,6 +9,7 @@ use app\models\prj\Signup;
 class PrjController extends AppController
 {
     public function actionIndex(){
+        //$content = $this->renderPartial('var/www/classes.loc/views/prj/docs/index.php');
         return $this->render('index');
     }
 

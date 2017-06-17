@@ -5,6 +5,7 @@ $db = require(__DIR__ . '/db.php');
 $controllerMap = require (__DIR__ . '/controllerMap.php');
 
 $config = [
+    'name'=>'Учетная система',
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'language'=>'ru_RU',

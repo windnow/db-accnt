@@ -2,10 +2,12 @@
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
 use Yii;
-$this->title = Yii::t('app','Вход');
-$this->params['breadcrumbs'][] = $this->title;
+$title = Yii::t('app','Вход');
+if(!$this->title)
+    $this->title = Yii::$app->name.": ".$title;
+$this->params['breadcrumbs'][] = $title;
 ?>
-<h1><?=$this->title?></h1>
+<h1><?=$title?></h1>
 <p>
     <?php $form = ActiveForm::begin([
         'class'=>'form-vertical1',

@@ -1,6 +1,9 @@
 <?php
 
-$this->title = Yii::t('app','Справочники');
-$this->params['breadcrumbs'][] = $this->title;
+$title = Yii::t('app','Справочники');
+if(!$this->title)
+    $this->title = Yii::$app->name. ': ' . $title;
+$this->params['breadcrumbs'][] = $title;
 ?>
-<h1><?=$this->title?></h1>
+<h1><?=$title?></h1>
+

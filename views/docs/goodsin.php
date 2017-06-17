@@ -2,8 +2,12 @@
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
 use Yii;
-$this->title = Yii::t('app','Поступление товаров');
+
+$title = Yii::t('app','Поступление товаров');
+if(!$this->title)
+    $this->title = Yii::$app->name. ': ' . $title;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Документы'), 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = $title;
 ?>
-<h1><?=$this->title?></h1>
+<h2><?=$title?></h2>
+

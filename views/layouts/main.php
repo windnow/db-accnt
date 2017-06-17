@@ -9,7 +9,8 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 
-$this->title='Проект';
+if(!$this->title)
+    $this->title=Yii::$app->name;
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -29,7 +30,7 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => Yii::t('app',$this->title),
+        'brandLabel' => Yii::t('app',Yii::$app->name),
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
@@ -63,7 +64,7 @@ AppAsset::register($this);
                 '<li>'
                 . Html::beginForm(['/prj/logout'], 'post')
                 . Html::submitButton(
-                    Yii::t('app','Выход ('. Yii::$app->user->identity->email  . ')'),
+                    Yii::t('app','Выход ['. Html::encode(Yii::$app->user->identity->email)  . ']'),
                     ['class' => 'btn btn-link logout']
                 )
                 . Html::endForm()
