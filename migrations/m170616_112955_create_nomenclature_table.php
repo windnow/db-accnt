@@ -19,6 +19,7 @@ class m170616_112955_create_nomenclature_table extends Migration
             'article'=>$this->string(20)
         ]);
 
+
     }
 
     /**

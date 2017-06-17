@@ -5,17 +5,12 @@ namespace app\controllers;
 use app\models\prj\Login;
 use Yii;
 use app\models\prj\Signup;
-use yii\web\Controller;
 
-class PrjController extends Controller
+class PrjController extends AppController
 {
     public function actionIndex(){
         return $this->render('index');
     }
-
-    private function checkUser(){
-        if(Yii::$app->user->isGuest)
-        {   $this->goHome();}    }
 
     public function actionSignup(){
         if(!Yii::$app->user->isGuest)
@@ -58,13 +53,4 @@ class PrjController extends Controller
         $this->goHome();
     }
 
-    public function actionNomenclature(){
-        $this->checkUser();
-        return $this->render('references/nomenclature');
-    }
-
-    public function actionGoodsin(){
-        $this->checkUser();
-        return $this->render('docs/goodsin');
-    }
 }

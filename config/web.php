@@ -2,6 +2,7 @@
 
 $params = require(__DIR__ . '/params.php');
 $db = require(__DIR__ . '/db.php');
+$controllerMap = require (__DIR__ . '/controllerMap.php');
 
 $config = [
     'id' => 'basic',
@@ -51,6 +52,7 @@ $config = [
         */
     ],
     'params' => $params,
+    'controllerMap' => $controllerMap,
 ];
 
 if (YII_ENV_DEV) {

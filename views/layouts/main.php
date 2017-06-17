@@ -40,11 +40,11 @@ AppAsset::register($this);
             'options' => ['class' => 'navbar-nav navbar-left'],
             'items'=>[
                 ['label' => Yii::t('app','Справочники'), 'items'=>[
-                    ['label'=>Yii::t('app','Номенклатура'),'url'=>['/prj/nomenclature']],
+                    ['label'=>Yii::t('app','Номенклатура'),'url'=>['/ref/nomenclature']],
                 ]
                 ],
                 ['label' => Yii::t('app','Документы'), 'items'=>[
-                    ['label'=>Yii::t('app','Поступление товаров'),'url'=>['/prj/goodsin']],
+                    ['label'=>Yii::t('app','Поступление товаров'),'url'=>['/docs/goodsin']],
                 ]
                 ],
             ]
